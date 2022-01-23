@@ -89,6 +89,7 @@ class SignUpActivity : AppCompatActivity() {
         val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
         val userRef = FirebaseDatabase.getInstance().reference.child("Users")
         val usersMap = HashMap<String, Any>()
+
         usersMap["uid"] = currentUserId
         usersMap["fullName"] = fullName
         usersMap["userName"] = userName
@@ -96,9 +97,17 @@ class SignUpActivity : AppCompatActivity() {
         usersMap["bio"] = "Update your bio to connect with more people."
         usersMap["image"] =
             "https://firebasestorage.googleapis.com/v0/b/social-bugger.appspot.com/o/Default%20Images%2Fprofile.png?alt=media&token=dfd96e88-b0f9-4a04-9cd8-9e422185e192"
+
         userRef.child(currentUserId).setValue(usersMap).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this, "Account created Successfully", Toast.LENGTH_SHORT).show()
+
+
+                FirebaseDatabase.getInstance().reference
+                    .child("Follow").child(currentUserId)
+                    .child("Following").child(currentUserId)
+                    .setValue(true)
+
 
                 val intent = Intent(this, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
