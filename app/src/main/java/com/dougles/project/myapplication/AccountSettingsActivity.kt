@@ -179,6 +179,7 @@ class AccountSettingsActivity : AppCompatActivity() {
                     if (!task.isSuccessful) {
                         task.exception?.let {
                             throw it
+                            progressDialog.dismiss()
                         }
                     }
 
