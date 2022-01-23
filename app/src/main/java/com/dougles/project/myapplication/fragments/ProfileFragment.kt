@@ -164,9 +164,7 @@ class ProfileFragment : Fragment() {
 
         userRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (context == null) {
-                    return
-                }
+
                 if (snapshot.exists()) {
                     val user = snapshot.getValue(User::class.java)
                     Picasso.get().load(user?.getImage()).placeholder(R.drawable.profile)
