@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "871383934459",
+    "project_id": "social-bugger",
+    "storage_bucket": "social-bugger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871383934459:android:1ab12f7387d20a3aec975e",
+        "android_client_info": {
+          "package_name": "com.dougles.project.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871383934459-eovi947lvnpuv0fv92ac36hb713e065q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiA74g4nNV8lQWlDiz8uv5ejFlAdFoU9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871383934459-eovi947lvnpuv0fv92ac36hb713e065q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
